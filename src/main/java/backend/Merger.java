@@ -31,7 +31,7 @@ public class Merger {
         FileWriter fileWriter = new FileWriter(merged, true);
         while (scanner.hasNext()) {
             String row = scanner.nextLine();
-            fileWriter.write(row);
+            fileWriter.write(row + "\n");
         }
 
         fileWriter.close();

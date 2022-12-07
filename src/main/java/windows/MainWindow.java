@@ -4,8 +4,6 @@ import backend.ButtonHandler;
 import backend.CustomFile;
 import backend.treedata.FileTreeConverter;
 import backend.treedata.FileTreeVisitor;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -204,9 +202,13 @@ public class MainWindow {
     private static void setContextMenuLeft(ContextMenu contextMenu) {
         MenuItem option_1 = new MenuItem("Create folder");
         MenuItem option_2 = new MenuItem("Delete");
-        MenuItem option_3 = new MenuItem("Move to folder");
+        MenuItem option_3 = new MenuItem("Copy");
+        MenuItem option_5 = new MenuItem("Rename");
+        SeparatorMenuItem separatorMenuItem = new SeparatorMenuItem();
+        MenuItem option_4 = new MenuItem("Open in editor");
 
-        contextMenu.getItems().addAll(option_1, option_2, option_3);
+        contextMenu.getItems().addAll(option_1, option_2, option_3, option_5,
+                separatorMenuItem, option_4);
 
         contextMenu.setOnAction(ButtonHandler::handleContextMenuChooserLeft);
     }
@@ -224,9 +226,13 @@ public class MainWindow {
     private static void setContextMenuRight(ContextMenu contextMenu) {
         MenuItem option_1 = new MenuItem("Create folder");
         MenuItem option_2 = new MenuItem("Delete");
-        MenuItem option_3 = new MenuItem("Move to folder");
+        MenuItem option_3 = new MenuItem("Copy");
+        MenuItem option_5 = new MenuItem("Rename");
+        SeparatorMenuItem separatorMenuItem = new SeparatorMenuItem();
+        MenuItem option_4 = new MenuItem("Open in editor");
 
-        contextMenu.getItems().addAll(option_1, option_2, option_3);
+        contextMenu.getItems().addAll(option_1, option_2, option_3, option_5
+                , separatorMenuItem, option_4);
 
         contextMenu.setOnAction(ButtonHandler::handleContextMenuChooserRight);
     }

@@ -1,4 +1,4 @@
-package windows;
+package windows.pathgetter;
 
 import backend.CustomFile;
 import backend.treedata.FileTreeConverter;
@@ -13,14 +13,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+public class MergePathGetter implements PathGetter {
 
-public class FileMerge {
     private static TreeView<CustomFile> treeView;
     private final static Stage stage = new Stage();
     private static TextField textField;
     private static String result = "";
 
-    public static String launch() {
+    @Override
+    public String launch() {
         VBox mainView = new VBox(10);
         mainView.setPadding(new Insets(20));
 
@@ -33,7 +34,8 @@ public class FileMerge {
 
         return result;
     }
-    public static void setMainView(VBox view) {
+
+    private static void setMainView(VBox view) {
         view.setAlignment(Pos.CENTER);
 
         textField = new TextField();
